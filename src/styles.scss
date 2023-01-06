@@ -13,6 +13,10 @@ html {
 body {
   background-color: col.$lighthouse;
   padding: 64px 96px;
+
+  @media screen and (max-width: 720px) {
+    padding: 48px 16px;
+  }
 }
 
 h1,
