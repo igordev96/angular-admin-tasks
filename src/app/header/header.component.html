@@ -1,0 +1,6 @@
+<div class="header">
+  <h1>{{ title }}</h1>
+  <p *ngIf="numberOfTodos$ | async" class="subtitle">
+    {{ numberOfTodos$ | async }} people need to do their work!
+  </p>
+</div>

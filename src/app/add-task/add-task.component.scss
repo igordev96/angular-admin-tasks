@@ -1,0 +1,54 @@
+@use "../../styles/colors" as col;
+
+.add-new-task-container {
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 48px;
+}
+
+.task-label {
+  margin-bottom: 8px;
+}
+
+.task-input {
+  border: 0;
+  outline: 0;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 32px;
+  color: col.$shadow-gargoyle;
+
+  &.ng-dirty.ng-invalid {
+    border: 1px solid red;
+  }
+}
+
+.input-button {
+  display: flex;
+  gap: 12px;
+}
+
+.add-button {
+  border: 0;
+  background-color: col.$shadow-gargoyle;
+  border-radius: 4px;
+  padding: 8px 12px;
+  color: col.$white;
+  cursor: pointer;
+  transition: 180ms;
+
+  &:hover {
+    background-color: lighten(col.$shadow-gargoyle, 5%);
+  }
+
+  &:disabled {
+    background-color: lighten(col.$shadow-gargoyle, 25%);
+    cursor: not-allowed;
+  }
+}
+
+.error {
+  color: red;
+  font-size: 0.825rem;
+}

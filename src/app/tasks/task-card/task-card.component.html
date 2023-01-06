@@ -1,0 +1,22 @@
+<div
+  [title]="task?.completed ? 'Done' : 'To do'"
+  #card
+  class="card"
+  (click)="completeHandler()"
+>
+  <img
+    [src]="
+      'https://avatars.dicebear.com/api/open-peeps/' + task?.userId + '.svg'
+    "
+    width="100"
+    height="100"
+  />
+  <div>
+    <h4 class="task">{{ task?.task }}</h4>
+    <p class="user-id">User ID: {{ task?.userId }}</p>
+  </div>
+  <i
+    class="far fa-trash-can trash"
+    (click)="deleteHandler(task?.id ?? '', $event)"
+  ></i>
+</div>

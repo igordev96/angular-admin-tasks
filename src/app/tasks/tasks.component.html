@@ -1,0 +1,8 @@
+<app-add-task (addEvent)="addItem($event)"></app-add-task>
+<div class="container">
+  <app-task-card
+    *ngFor="let task of tasks$ | async"
+    [task]="task"
+    (deleteEvent)="deleteItem($event)"
+  ></app-task-card>
+</div>

@@ -1,0 +1,22 @@
+<div class="add-new-task-container">
+  <label class="task-label" for="task">Add a new task: </label>
+  <div class="input-button">
+    <input
+      (keydown.Enter)="addTask()"
+      class="task-input"
+      id="task"
+      [formControl]="task"
+    />
+    <button class="add-button" (click)="addTask()" [disabled]="!task.valid">
+      Add
+    </button>
+  </div>
+  <div class="error" *ngIf="task.invalid && task.dirty">
+    <div *ngIf="task.errors?.['pattern']">
+      The task cannot be an empty space.
+    </div>
+    <div *ngIf="task.errors?.['required']">
+      You must enter a task to submit it.
+    </div>
+  </div>
+</div>
